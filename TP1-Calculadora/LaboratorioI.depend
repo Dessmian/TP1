@@ -1,0 +1,33 @@
+# depslib dependency file v1.0
+1554226836 source:c:\users\screw\desktop\tp1\laboratorioi\tp1-programacioni\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<math.h>
+	"funciones_TP1.h"
+
+1554226836 c:\users\screw\desktop\tp1\laboratorioi\tp1-programacioni\funciones_tp1.h
+
+1554227034 source:c:\users\screw\desktop\tp1\laboratorioi\tp1-programacioni\funciones_tp1.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<math.h>
+	"funciones_TP1.h"
+
+1554227034 source:c:\users\screw\desktop\tp1\laboratorioi\tp1-calculadora\funciones_tp1.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<math.h>
+	"funciones_TP1.h"
+
+1554226836 c:\users\screw\desktop\tp1\laboratorioi\tp1-calculadora\funciones_tp1.h
+
+1554226836 source:c:\users\screw\desktop\tp1\laboratorioi\tp1-calculadora\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<math.h>
+	"funciones_TP1.h"
+
