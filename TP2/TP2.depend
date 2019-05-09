@@ -1,0 +1,24 @@
+# depslib dependency file v1.0
+1557365731 source:c:\users\screw\desktop\tp2\tp2\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"empleoyeeFunctions.h"
+
+1557361232 c:\users\screw\desktop\tp2\tp2\empleoyeefunctions.h
+
+1557365055 source:c:\users\screw\desktop\tp2\tp2\validations.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"validations.h"
+
+1557364180 c:\users\screw\desktop\tp2\tp2\validations.h
+
+1557365384 source:c:\users\screw\desktop\tp2\tp2\empleoyeefunctions.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"empleoyeeFunctions.h"
+	"validations.h"
+
