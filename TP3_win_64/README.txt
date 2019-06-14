@@ -1,0 +1,3 @@
+TP hecho por Suarez Murray, Demian Jose.
+
+Si bien en el enunciado dice que el archivo se debe cargar y guardar en data.csv independientemente del modo elegido (texto o binario), en función de evitar engorrosas validaciones, que creo son ajenas al objetivo de aprendizaje del trabajo practico, deje la carga y el guardado en archivos correspondientes al tipo de dato. También modifique los datos originales para que en el modo de texto se guarden (y sean leídos) separados por ';' en lugar de ',' , ya que esto mejora la presentación de los datos cuando se usa una planilla excel.
