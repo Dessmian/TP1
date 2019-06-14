@@ -8,6 +8,12 @@
 #include "validations.h"
 #include "prints.h"
 
+/** \brief limpia el stdin y guarda un dato int
+ *
+ * \param option int* - puntero donde se guardara el dato
+ * \return void
+ *
+ */
 void getOption(int* option)
 {
     if (option!=NULL)
@@ -167,7 +173,7 @@ int controller_editEmployee(LinkedList* pArrayListEmployee)
     int retVal = 0;
     if (pArrayListEmployee!=NULL)
     {
-        int option = 0 , index = 0, tries;
+        int option = 0 , index = -1, tries;
         while (option!=3)
         {
             clearScreen();
@@ -179,12 +185,12 @@ int controller_editEmployee(LinkedList* pArrayListEmployee)
             case 1:
                 tries = 0;
                 index = controller_getEmployee(pArrayListEmployee);
-                while (index<1&&tries<4)
+                while (index<0&&tries<4)
                 {
                     tries++;
                     index = controller_getEmployee(pArrayListEmployee);
                 }
-                if (index>0)
+                if (index>(-1))
                 {
                     Employee* ptrBufferEmployee;
                     ptrBufferEmployee = (Employee*)ll_get(pArrayListEmployee,index);
@@ -431,14 +437,14 @@ int controller_askfor_name(void* ptrEmployee)
         printf("\nIngrese el nombre: ");
         fflush(stdin);
         //fgets(bufferName,127,stdin);
-        fscanf(stdin,"%[^\n]\0",bufferName);
+        scanf("%[^\n]",bufferName);
         //printf("datos %s - nueva linea?",bufferName);
         while ( !(isName(bufferName,strlen(bufferName)))&&counter<5 )
         {
             counter++;
             printf("Error, datos invalidos. Ingrese nombre: ");
             fflush(stdin);
-            fscanf(stdin,"%[^\n]\0",bufferName);
+            scanf("%[^\n]",bufferName);
             //fgets(bufferName,127,stdin);
             //printf("datos %s - nueva linea?",bufferName);
         }
@@ -585,6 +591,12 @@ int controller_compare_ID(LinkedList* pArrayListEmployee, int IDentification)
     }
     return retVal;
 }
+/** \brief pide al usuario el id de un empleado y lo busca
+ *
+ * \param LinkedList* pArrayListEmployee - LinkedList empleados
+ * \return int - 0 si no pudo - 1 si pudo
+ *
+ */
 int controller_getEmployee (LinkedList* pArrayListEmployee)
 {
     int retVal = 0;
@@ -611,10 +623,18 @@ int controller_getEmployee (LinkedList* pArrayListEmployee)
     }
     return retVal;
 }
+/** \brief toma el lugar en la lista de dos empleados y los intercambia
+ *
+ * \param pArrayListEmployee LinkedList* - lista empleados
+ * \param indexOne int -
+ * \param indexTwo int
+ * \return int - 0 si no pudo - 1 si pudo
+ *
+ */
 int controller_switch(LinkedList* pArrayListEmployee, int indexOne, int indexTwo)
 {
     int retVal = 0;
-    if (pArrayListEmployee!=NULL&&indexOne>0&&indexTwo>0)
+    if (pArrayListEmployee!=NULL&&indexOne>(-1)&&indexTwo>(-1))
     {
         Employee* auxPtrOne = NULL;
         Employee* auxPtrTwo = NULL;
@@ -625,6 +645,12 @@ int controller_switch(LinkedList* pArrayListEmployee, int indexOne, int indexTwo
     }
     return retVal;
 }
+/** \brief pregunta al usuario de que manera quiere ordenar
+ *
+ * \param retOrder int* - carga 1 si Mayor a Menor - -1 si Menor a Mayor
+ * \return int
+ *
+ */
 int getOrder(int* retOrder)
 {
     int retVal = 0;
@@ -655,6 +681,14 @@ int getOrder(int* retOrder)
     }
     return retVal;
 }
+/** \brief ordena la lista acorde a una funcion y un orden pasados por parametro
+ *
+ * \param LinkedList* - lista empleados
+ * \param (*pFunc) - puntero a funcion de comparacion
+ * \param int - orden (-1 menor a mayor - 1 mayor a menor)
+ * \return int - 0 si no pudo - 1 si pudo
+ *
+ */
 int controller_sortByParam (LinkedList* pArrayListEmployee,int (*pFunc)(void* ,void*), int order)
 {
     int retVal = 0;

@@ -63,6 +63,13 @@ int parser_EmployeeFromBinary(FILE* pFile , LinkedList* pArrayListEmployee)
     }
     return retVal;
 }
+/** \brief guarda una lista de empleados en modo texto
+ *
+ * \param FILE* - puntero al archivo donde guardar los datos
+ * \param LinkedList* - lista a guardar
+ * \return int - 0 si no pudo - 1 si pudo
+ *
+ */
 int parser_EmployeeListToText (FILE* pFile, LinkedList* pArrayListEmployee)
 {
     int retVal = 0;
@@ -101,6 +108,13 @@ int parser_EmployeeListToText (FILE* pFile, LinkedList* pArrayListEmployee)
     }
     return retVal;
 }
+/** \brief guarda una lista de empleados en modo binario
+ *
+ * \param FILE* - puntero al archivo donde guardar los datos
+ * \param LinkedList* - lista a guardar
+ * \return int - 0 si no pudo - 1 si pudo
+ *
+ */
 int parser_EmployeeListToBinary (FILE* pFile, LinkedList* pArrayListEmployee)
 {
     int retVal = 0;

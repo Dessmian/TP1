@@ -13,6 +13,11 @@
     -cargo campos
     -si hay error libero memoria
     */
+/** \brief crea un puntero a empleado y reserva memoria en el heap para dicho puntero
+ *
+ * \return Employee* - puntero a empleado
+ *
+ */
 Employee* employee_new()
 {
     int tries = 0;
@@ -25,6 +30,15 @@ Employee* employee_new()
     while (retEmp==NULL&&tries<10);
     return retEmp;
 }
+/** \brief crea un nuevo empleado y lo carga con los datos pasados
+ *
+ * \param idStr char* - ID en formato char*
+ * \param nombreStr char* - nombre
+ * \param horasTrabajadasStr char* - horas trabajadas
+ * \param sueldoStr char* - sueldo
+ * \return Employee* - puntero a empleado (si los datos son invalido el puntero sera NULL)
+ *
+ */
 Employee* employee_newParametros(char* idStr,char* nombreStr,char* horasTrabajadasStr,char* sueldoStr)
 {
     Employee* new_employee = NULL;
@@ -90,6 +104,13 @@ Employee* employee_newParametrosBinarios (Employee* ptrBuffer)
     }
     return retEmployee;
 }
+/** \brief crea un nuevo empleado y lo carga con los datos pasados
+ *
+ * \param int inputID - char* inputName
+ * \param int inputHours - int inputSalary
+ * \return Employee* - puntero a empleado (si los datos son invalidos el puntero sera NULL)
+ *
+ */
 Employee* employee_newParametrosInt (int inputID,char* inputName,int inputHours,int inputSalary)
 {
     Employee* retEmployee = NULL;
@@ -119,11 +140,11 @@ void employee_delete(Employee* ptrEmp)
         free(ptrEmp);
     }
 }
-/** \brief setea el id a un Employee
+/** \brief toma un puntero a empleado y define el valor de ID
  *
- * \param ptrEmp Employee*
- * \param id int
- * \return int - si se pudo 1 - sino 0
+ * \param ptrEmp Employee* - puntero a empleado
+ * \param sueldo int* - puntero en donde guardar el valor
+ * \return int - 0 si no se pudo - 1 si se pudo
  *
  */
 int employee_setId(Employee* ptrEmp,int id)
@@ -139,6 +160,13 @@ int employee_setId(Employee* ptrEmp,int id)
     }
     return retVal;
 }
+/** \brief toma un puntero a empleado y retorna el valor de ID
+ *
+ * \param ptrEmp Employee* - puntero a empleado
+ * \param sueldo int* - puntero en donde guardar el valor
+ * \return int - 0 si no se pudo - 1 si se pudo
+ *
+ */
 int employee_getId(Employee* ptrEmp,int* id)
 {
     int retVal = 0;
@@ -149,7 +177,13 @@ int employee_getId(Employee* ptrEmp,int* id)
     }
     return retVal;
 }
-
+/** \brief toma un puntero a empleado y define el valor de Nombre
+ *
+ * \param ptrEmp Employee* - puntero a empleado
+ * \param sueldo int* - puntero en donde guardar el valor
+ * \return int - 0 si no se pudo - 1 si se pudo
+ *
+ */
 int employee_setNombre(Employee* ptrEmp,char* nombre)
 {
     int retVal = 0;
@@ -163,6 +197,13 @@ int employee_setNombre(Employee* ptrEmp,char* nombre)
     }
     return retVal;
 }
+/** \brief toma un puntero a empleado y retorna el valor de Nombre
+ *
+ * \param ptrEmp Employee* - puntero a empleado
+ * \param sueldo int* - puntero en donde guardar el valor
+ * \return int - 0 si no se pudo - 1 si se pudo
+ *
+ */
 int employee_getNombre(Employee* ptrEmp,char* nombre)
 {
     int retVal = 0;
@@ -173,7 +214,13 @@ int employee_getNombre(Employee* ptrEmp,char* nombre)
     }
     return retVal;
 }
-
+/** \brief toma un puntero a empleado y define el valor de Horas Trabajadas
+ *
+ * \param ptrEmp Employee* - puntero a empleado
+ * \param sueldo int* - puntero en donde guardar el valor
+ * \return int - 0 si no se pudo - 1 si se pudo
+ *
+ */
 int employee_setHorasTrabajadas(Employee* ptrEmp,int horasTrabajadas)
 {
     int retVal = 0;
@@ -187,6 +234,13 @@ int employee_setHorasTrabajadas(Employee* ptrEmp,int horasTrabajadas)
     }
     return retVal;
 }
+/** \brief toma un puntero a empleado y retorna el valor de Horas Trabajadas
+ *
+ * \param ptrEmp Employee* - puntero a empleado
+ * \param sueldo int* - puntero en donde guardar el valor
+ * \return int - 0 si no se pudo - 1 si se pudo
+ *
+ */
 int employee_getHorasTrabajadas(Employee* ptrEmp,int* horasTrabajadas)
 {
     int retVal = 0;
@@ -197,7 +251,13 @@ int employee_getHorasTrabajadas(Employee* ptrEmp,int* horasTrabajadas)
     }
     return retVal;
 }
-
+/** \brief toma un puntero a empleado y define el valor de Sueldo
+ *
+ * \param ptrEmp Employee* - puntero a empleado
+ * \param sueldo int* - puntero en donde guardar el valor
+ * \return int - 0 si no se pudo - 1 si se pudo
+ *
+ */
 int employee_setSueldo(Employee* ptrEmp,int sueldo)
 {
     int retVal = 0;
@@ -211,6 +271,13 @@ int employee_setSueldo(Employee* ptrEmp,int sueldo)
     }
     return retVal;
 }
+/** \brief toma un puntero a empleado y retorna el valor de sueldo
+ *
+ * \param ptrEmp Employee* - puntero a empleado
+ * \param sueldo int* - puntero en donde guardar el valor
+ * \return int - 0 si no se pudo - 1 si se pudo
+ *
+ */
 int employee_getSueldo(Employee* ptrEmp,int* sueldo)
 {
     int retVal = 0;
@@ -224,13 +291,33 @@ void printEmpHeader ()
 {
     printf("\n ID  |  Nombre\t\t\t| Horas Trabajadas | Sueldo\n");
 }
+/** \brief imprime un empleado en consola
+ *
+ * \param ptrEmp Employee* - puntero al empleado a imprimir
+ * \return
+ *
+ */
 void printOneEmployee (Employee* ptrEmp)
 {
     if (ptrEmp!=NULL)
     {
-        printf(" %d  | %s\t\t| %d\t\t| %d\n",ptrEmp->id,ptrEmp->nombre,ptrEmp->horasTrabajadas,ptrEmp->sueldo);
+        char bufferName[128];
+        int bufferID , bufferHours , bufferSalary;
+        employee_getId(ptrEmp,&bufferID);
+        employee_getNombre(ptrEmp,bufferName);
+        employee_getHorasTrabajadas(ptrEmp,&bufferHours);
+        employee_getSueldo(ptrEmp,&bufferSalary);
+        printf(" %d  | %s\t\t| %d\t\t| %d\n",bufferID,bufferName,bufferHours,bufferSalary);
     }
 }
+/** \brief - interactua con el usuario y llama a las funciones correspondientes para modificar
+ * los campos de un empleado
+ *
+ * \param ptrEmployee Employee* - puntero a empleado a modificar
+ * \param pArrayListEmployee void* - puntero a LinkedList (para verificar que no se repita el id)
+ * \return int - 0 si no se pudo - 1 si se modifico
+ *
+ */
 int employee_modify (Employee* ptrEmployee,void* pArrayListEmployee)
 {
     int retVal = 0;
@@ -272,10 +359,7 @@ int employee_modify (Employee* ptrEmployee,void* pArrayListEmployee)
                     {
                         if (controller_compare_ID(pArrayListEmployee,bufferEmployee->id)==0)
                         {
-                            employee_setId(ptrEmployee,bufferEmployee->id);
-                            employee_setNombre(ptrEmployee,bufferEmployee->nombre);
-                            employee_setHorasTrabajadas(ptrEmployee,bufferEmployee->horasTrabajadas);
-                            employee_setSueldo(ptrEmployee,bufferEmployee->sueldo);
+                            employee_overwrite(ptrEmployee,bufferEmployee);
                             printf("\n\nCambios guardados");
                             pause();
                         }
@@ -283,10 +367,7 @@ int employee_modify (Employee* ptrEmployee,void* pArrayListEmployee)
                         {
                             if (ptrEmployee->id==bufferEmployee->id)
                             {
-                                employee_setId(ptrEmployee,bufferEmployee->id);
-                                employee_setNombre(ptrEmployee,bufferEmployee->nombre);
-                                employee_setHorasTrabajadas(ptrEmployee,bufferEmployee->horasTrabajadas);
-                                employee_setSueldo(ptrEmployee,bufferEmployee->sueldo);
+                                employee_overwrite(ptrEmployee,bufferEmployee);
                                 printf("\n\nCambios guardados");
                                 newLine();
                                 pause();
@@ -453,6 +534,13 @@ int employee_getNewID (void* pArraylistEmployee)
     }
     return retID;
 }
+/** \brief compara el id de dos empleados
+ *
+ * \param ptrEmp1 void* - puntero a empleado
+ * \param ptrEmpTwo void* - puntero a empleado
+ * \return int - 0 si son iguales - 1 si el premero es mayor - -1 si el primero es menor
+ *
+ */
 int employee_sortByID(void* ptrEmp1 ,void* ptrEmpTwo)
 {
     int retVal = 0;
@@ -474,6 +562,13 @@ int employee_sortByID(void* ptrEmp1 ,void* ptrEmpTwo)
     }
     return retVal;
 }
+/** \brief compara el nombre de dos empleados
+ *
+ * \param ptrEmp1 void* - puntero a empleado
+ * \param ptrEmpTwo void* - puntero a empleado
+ * \return int - 0 si son iguales - 1 si el premero es mayor - -1 si el primero es menor
+ *
+ */
 int employee_sortByName(void* ptrEmp1 ,void* ptrEmpTwo)
 {
     int retVal = 0;
@@ -497,6 +592,13 @@ int employee_sortByName(void* ptrEmp1 ,void* ptrEmpTwo)
     }
     return retVal;
 }
+/** \brief compara las horas trabajadas de dos empleados
+ *
+ * \param ptrEmp1 void* - puntero a empleado
+ * \param ptrEmpTwo void* - puntero a empleado
+ * \return int - 0 si son iguales - 1 si el premero es mayor - -1 si el primero es menor
+ *
+ */
 int employee_sortByHours(void* ptrEmp1 ,void* ptrEmpTwo)
 {
     int retVal = 0;
@@ -518,6 +620,13 @@ int employee_sortByHours(void* ptrEmp1 ,void* ptrEmpTwo)
     }
     return retVal;
 }
+/** \brief compara el salario de dos empleados
+ *
+ * \param ptrEmp1 void* - puntero a empleado
+ * \param ptrEmpTwo void* - puntero a empleado
+ * \return int - 0 si son iguales - 1 si el premero es mayor - -1 si el primero es menor
+ *
+ */
 int employee_sortBySalary(void* ptrEmp1 ,void* ptrEmpTwo)
 {
     int retVal = 0;
@@ -539,7 +648,33 @@ int employee_sortBySalary(void* ptrEmp1 ,void* ptrEmpTwo)
     }
     return retVal;
 }
-
+/** \brief toma dos punteros a empleado y sobreescribe los datos de uno sobre el otro.
+ *
+ * \param ptrToWriteOn Employee* - puntero a sobreescribir
+ * \param ptrToReadFrom Employee* - puntero de donde se leen los datos
+ * \return int - 1 si pudo - 0 si no pudo
+ *
+ */
+int employee_overwrite(Employee* ptrToWriteOn,Employee* ptrToReadFrom)
+{
+    int retVal = 0;
+    if (ptrToWriteOn!=NULL&&ptrToReadFrom!=NULL)
+    {
+        char bufferName[128];
+        int bufferID , bufferHours , bufferSalary;
+        employee_getId(ptrToReadFrom,&bufferID);
+        employee_getNombre(ptrToReadFrom,bufferName);
+        employee_getHorasTrabajadas(ptrToReadFrom,&bufferHours);
+        employee_getSueldo(ptrToReadFrom,&bufferSalary);
+        //
+        employee_setId(ptrToWriteOn,bufferID);
+        employee_setNombre(ptrToWriteOn,bufferName);
+        employee_setHorasTrabajadas(ptrToWriteOn,bufferHours);
+        employee_setSueldo(ptrToWriteOn,bufferSalary);
+        retVal = 1;
+    }
+    return retVal;
+}
 
 
 

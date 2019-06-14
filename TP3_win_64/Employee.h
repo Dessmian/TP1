@@ -42,5 +42,6 @@ int employee_sortByName(void* ptrEmp1 ,void* ptrEmpTwo);
 int employee_sortByHours(void* ptrEmp1 ,void* ptrEmpTwo);
 int employee_sortBySalary(void* ptrEmp1 ,void* ptrEmpTwo);
 
+int employee_overwrite(Employee* ptrEmp1,Employee* ptrEmpTwo);
 
 #endif // employee_H_INCLUDED

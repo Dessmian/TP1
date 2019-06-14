@@ -37,6 +37,9 @@ int main()
         case 1:
             ll_clear(listaEmpleados);
             controller_loadFromText("data.csv",listaEmpleados);
+            Employee* aux = (Employee*)ll_get(listaEmpleados,0);
+            printOneEmployee(aux);
+            pause();
             break;
         case 2:
             ll_clear(listaEmpleados);

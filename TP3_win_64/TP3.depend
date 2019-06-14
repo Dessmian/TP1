@@ -316,3 +316,62 @@
 	<ctype.h>
 	<string.h>
 
+1560518191 source:d:\demian murray\tp1\tp3_win_64\controller.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+	"Employee.h"
+	"parser.h"
+	"Controller.h"
+	"validations.h"
+	"prints.h"
+
+1560512578 d:\demian murray\tp1\tp3_win_64\linkedlist.h
+
+1560515573 d:\demian murray\tp1\tp3_win_64\employee.h
+
+1560512578 d:\demian murray\tp1\tp3_win_64\parser.h
+
+1560512578 d:\demian murray\tp1\tp3_win_64\controller.h
+
+1560512578 d:\demian murray\tp1\tp3_win_64\validations.h
+
+1560512578 d:\demian murray\tp1\tp3_win_64\prints.h
+
+1560517051 source:d:\demian murray\tp1\tp3_win_64\employee.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"Employee.h"
+	"LinkedList.h"
+	"validations.h"
+	"prints.h"
+	"Controller.h"
+
+1560518191 source:d:\demian murray\tp1\tp3_win_64\parser.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkedList.h"
+	"Employee.h"
+
+1560512578 source:d:\demian murray\tp1\tp3_win_64\prints.c
+	<stdlib.h>
+	<stdio.h>
+	"prints.h"
+
+1560512578 source:d:\demian murray\tp1\tp3_win_64\validations.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<string.h>
+
+1560512744 source:d:\demian murray\tp1\tp3_win_64\main.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkedList.h"
+	"Controller.h"
+	"Employee.h"
+	"prints.h"
+
